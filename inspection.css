@@ -1,0 +1,27 @@
+.inspection-visual { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: 36px; align-items: center; margin: 0 0 48px; padding: 28px; background: #eef5f6; }
+.inspection-visual img { width: 100%; margin: 0; }
+.inspection-visual-copy span, .inspection-cta span { color: #127c91; font-weight: 900; letter-spacing: .14em; }
+.inspection-visual-copy strong { display: block; margin: 12px 0 18px; color: #333; font-size: clamp(24px, 3vw, 38px); line-height: 1.4; }
+.inspection-visual-copy ul { margin: 0; padding-left: 1.4em; }
+.inspection-flow { display: grid; grid-template-columns: repeat(6, 1fr); gap: 1px; margin: 36px 0 20px; background: rgba(51,51,51,.16); border: 1px solid rgba(51,51,51,.16); }
+.inspection-flow div { position: relative; min-height: 110px; padding: 18px 12px; background: #fff; text-align: center; }
+.inspection-flow div:not(:last-child)::after { content: "→"; position: absolute; right: -10px; top: 40%; z-index: 2; color: #127c91; font-weight: 900; }
+.inspection-flow b { display: block; color: #127c91; font-size: 12px; letter-spacing: .1em; }
+.inspection-flow span { font-weight: 800; font-size: 13px; }
+.inspection-cycle-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 24px 0; }
+.inspection-cycle-cards div { padding: 20px 16px; border-top: 4px solid #127c91; background: #eef5f6; text-align: center; }
+.inspection-cycle-cards span, .inspection-cycle-cards small { display: block; }
+.inspection-cycle-cards strong { display: block; color: #127c91; font-size: 34px; line-height: 1.3; }
+.inspection-docs { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 22px 0; }
+.inspection-docs div { min-height: 115px; padding: 18px 10px; border: 1px solid rgba(51,51,51,.16); text-align: center; }
+.inspection-docs b { display: grid; place-items: center; width: 32px; height: 32px; margin: 0 auto 10px; border-radius: 50%; background: #127c91; color: #fff; }
+.inspection-docs span { font-weight: 800; font-size: 13px; }
+.inspection-price-table table { min-width: 900px; }
+.inspection-price-table thead th { background: #127c91; color: #fff; text-align: center; }
+.inspection-price-table tbody tr:nth-child(even) th, .inspection-price-table tbody tr:nth-child(even) td { background: #eef5f6; }
+.inspection-price-table .total-cost th, .inspection-price-table .total-cost td { background: #d7edf2; color: #333; font-weight: 900; border-top: 3px solid #127c91; }
+.inspection-cta { display: flex; justify-content: space-between; align-items: center; gap: 28px; margin-top: 54px; padding: 34px; background: #eef5f6; }
+.inspection-cta strong { display: block; color: #333; font-size: 28px; }
+.inspection-cta p { margin: 4px 0 0; }
+.inspection-cta > div:last-child { display: flex; gap: 10px; flex-wrap: wrap; }
+@media (max-width: 760px) { .inspection-visual { grid-template-columns: 1fr; } .inspection-flow { grid-template-columns: repeat(2, 1fr); } .inspection-cycle-cards { grid-template-columns: repeat(2, 1fr); } .inspection-docs { grid-template-columns: repeat(2, 1fr); } .inspection-cta { align-items: stretch; flex-direction: column; } }
