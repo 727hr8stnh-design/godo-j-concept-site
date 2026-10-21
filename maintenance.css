@@ -1,6 +1,6 @@
 .maintenance-content .service-tabs {
   position: sticky;
-  top: 88px;
+  top: 92px;
   z-index: 40;
   margin: 0 0 54px;
   padding: 12px;
@@ -14,5 +14,5 @@
 .service-price-table td:last-child { text-align: right; white-space: nowrap; }
 
 @media (max-width: 620px) {
-  .maintenance-content .service-tabs { top: 72px; margin-bottom: 38px; flex-wrap: nowrap; overflow-x: auto; }
+  .maintenance-content .service-tabs { top: 70px; margin-bottom: 38px; flex-wrap: nowrap; overflow-x: auto; }
 }

@@ -1,0 +1,301 @@
+:root {
+  --brand: #127c91;
+  --brand-deep: #075f72;
+  --brand-soft: #dff1f4;
+  --paper: #fff;
+  --canvas: #f7faf9;
+  --ink: #243238;
+  --muted: #66767c;
+  --line: rgba(18, 124, 145, .18);
+  --shadow: 0 18px 50px rgba(23, 72, 82, .12);
+  --radius: 22px;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+}
+
+.site-header {
+  height: 92px;
+  padding: 0 clamp(20px, 5vw, 80px);
+  border-top: 0;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 0 6px 24px rgba(23, 72, 82, .06);
+}
+
+.brand-logo {
+  height: 66px;
+  max-width: min(310px, 42vw);
+}
+
+.site-header nav a {
+  position: relative;
+  padding: 34px 0 30px;
+  color: var(--ink);
+}
+
+.site-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 20px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--brand);
+  transition: right .2s ease;
+}
+
+.site-header nav a:hover::after { right: 0; }
+
+.hero {
+  position: relative;
+  min-height: min(680px, calc(100vh - 92px));
+  display: flex;
+  align-items: center;
+  padding: 72px clamp(22px, 6vw, 110px);
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(5, 73, 88, .88) 0%, rgba(5, 73, 88, .64) 32%, rgba(5, 73, 88, .08) 66%),
+    url("assets/illustrations/home-workshop.jpg") center / cover no-repeat;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(620px, 92vw);
+  max-width: none;
+  padding: clamp(26px, 4vw, 54px);
+  border: 1px solid rgba(255,255,255,.24);
+  border-radius: var(--radius);
+  background: rgba(5, 73, 88, .18);
+  backdrop-filter: blur(4px);
+}
+
+.hero .eyebrow { color: #d8f4f7; }
+.hero h1 { color: #fff; font-size: clamp(48px, 6vw, 88px); letter-spacing: -.04em; }
+.hero h1 em { color: #fff; }
+.hero .lead { color: rgba(255,255,255,.92); }
+.hero .button { border-color: #fff; color: #fff; border-radius: 999px; }
+.hero .button.primary { border-color: var(--brand); background: var(--brand); }
+.hero-visual { display: none; }
+
+.marquee { background: var(--brand-deep); }
+
+.section { padding: clamp(76px, 9vw, 130px) 5vw; }
+.directory { max-width: 1380px; }
+.directory h2 { color: var(--ink); }
+.directory-lead { color: var(--muted); }
+
+.page-grid {
+  gap: 16px;
+  border: 0;
+  background: transparent;
+}
+
+.page-card {
+  position: relative;
+  min-height: 330px;
+  overflow: hidden;
+  padding: 176px 28px 28px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(23, 72, 82, .08);
+}
+
+.page-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 148px;
+  background: center / cover no-repeat;
+}
+
+.page-card:nth-child(1)::before {
+  background-image: linear-gradient(180deg, transparent 58%, #fff 100%), url("assets/illustrations/inspection-workshop.jpg");
+}
+
+.page-card:nth-child(2)::before {
+  background-image: linear-gradient(180deg, transparent 58%, #fff 100%), url("assets/illustrations/maintenance-workshop.jpg");
+}
+
+.page-card:nth-child(3)::before {
+  background-image: linear-gradient(180deg, transparent 58%, #fff 100%), url("assets/illustrations/home-workshop.jpg");
+}
+
+.page-card:nth-child(4)::before {
+  background-image: linear-gradient(180deg, transparent 58%, #fff 100%), url("assets/illustrations/company-workshop.jpg");
+}
+
+.page-card:nth-child(5)::before {
+  background-image: linear-gradient(135deg, rgba(18, 124, 145, .94), rgba(12, 83, 98, .96));
+}
+
+.page-card:hover {
+  background: var(--brand-soft);
+  box-shadow: var(--shadow);
+}
+
+.page-card > span { color: var(--brand); }
+
+.home-news { background: #eef7f7; }
+.home-news .legacy-content { border-radius: var(--radius); }
+.home-news li { padding: 14px 0; border-bottom: 1px solid var(--line); }
+
+.page-hero {
+  position: relative;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 70px clamp(24px, 7vw, 120px);
+  overflow: hidden;
+  background: linear-gradient(90deg, rgba(5,73,88,.88), rgba(5,73,88,.28)), var(--brand);
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--brand), #71c3cf, transparent);
+}
+
+.page-hero > * { position: relative; z-index: 1; }
+.page-hero h1 { color: #fff; text-shadow: 0 3px 18px rgba(0,0,0,.2); }
+.page-hero .eyebrow { color: #d7f3f6; }
+
+body:has(.inspection-price-table) .page-hero {
+  background:
+    linear-gradient(90deg, rgba(5,73,88,.92) 0%, rgba(5,73,88,.5) 38%, rgba(5,73,88,.04) 70%),
+    url("assets/illustrations/inspection-workshop.jpg") center / cover no-repeat;
+}
+
+body:has(#recs) .page-hero {
+  background:
+    linear-gradient(90deg, rgba(5,73,88,.92) 0%, rgba(5,73,88,.5) 38%, rgba(5,73,88,.04) 70%),
+    url("assets/illustrations/maintenance-workshop.jpg") center / cover no-repeat;
+}
+
+body:has(#company-profile) .page-hero {
+  background:
+    linear-gradient(90deg, rgba(5,73,88,.92) 0%, rgba(5,73,88,.5) 38%, rgba(5,73,88,.04) 70%),
+    url("assets/illustrations/company-workshop.jpg") center / cover no-repeat;
+}
+
+.page-layout {
+  max-width: 1240px;
+  padding: 64px 24px 120px;
+}
+
+.legacy-content {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.legacy-content h2 {
+  color: var(--ink);
+  border-color: var(--brand);
+}
+
+.legacy-content h3 { color: var(--brand-deep); }
+.legacy-content a { color: var(--brand); }
+
+.service-tabs,
+.maintenance-content .service-tabs {
+  position: sticky;
+  top: 92px;
+  z-index: 40;
+  margin: -18px -18px 54px;
+  padding: 14px 18px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 12px 28px rgba(23,72,82,.12);
+  backdrop-filter: blur(10px);
+}
+
+.service-tabs a {
+  min-width: max-content;
+  border-radius: 999px;
+  background: #eff7f7;
+  color: var(--ink);
+}
+
+.service-tabs a:hover { background: var(--brand-soft); }
+
+.maintenance-title {
+  color: var(--ink);
+  padding-left: 18px !important;
+  border-left: 6px solid var(--brand) !important;
+}
+
+.maintenance-section { scroll-margin-top: 190px; }
+
+.legacy-content table {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.legacy-content th {
+  background: var(--brand-soft);
+  color: var(--ink);
+}
+
+.legacy-content th,
+.legacy-content td { border-color: var(--line); }
+
+body .inspection-visual { display: none !important; }
+.inspection-flow,
+.inspection-cycle-cards,
+.inspection-docs,
+.inspection-cta { border-radius: 18px; overflow: hidden; }
+
+.button {
+  border-radius: 999px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.button:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(18,124,145,.18); }
+.button.primary { border-color: var(--brand); background: var(--brand); }
+
+footer {
+  background: var(--brand-deep);
+  border-top: 6px solid var(--brand);
+}
+
+@media (max-width: 960px) {
+  .site-header { height: 78px; }
+  .brand-logo { height: 56px; }
+  .site-header nav { top: 78px; border-bottom: 1px solid var(--line); }
+  .site-header nav a { padding: 8px 0; }
+  .hero { min-height: 650px; background-position: 62% center; }
+  .page-grid { grid-template-columns: 1fr 1fr; }
+  .service-tabs, .maintenance-content .service-tabs { top: 78px; }
+}
+
+@media (max-width: 620px) {
+  .site-header { height: 70px; padding: 0 18px; }
+  .brand-logo { height: 48px; max-width: 62vw; }
+  .site-header nav { top: 70px; }
+  .hero {
+    min-height: 620px;
+    align-items: flex-end;
+    padding: 130px 18px 34px;
+    background-position: 68% center;
+  }
+  .hero-copy { padding: 26px 22px; }
+  .hero h1 { font-size: clamp(42px, 13vw, 62px); }
+  .hero .lead { margin: 24px 0; }
+  .page-grid { grid-template-columns: 1fr; }
+  .page-card { min-height: 300px; }
+  .page-hero { min-height: 300px; padding: 48px 24px; background-position: 66% center !important; }
+  .page-layout { padding: 28px 0 72px; }
+  .legacy-content { border-radius: 0; border-left: 0; border-right: 0; }
+  .service-tabs, .maintenance-content .service-tabs { top: 70px; margin: -12px -4px 38px; border-radius: 12px; }
+}
